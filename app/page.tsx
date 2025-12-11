@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { icons } from "lucide-react"
+import { MouseBackground } from "@/components/mouse-background"
 
 
 export default function Home() {
@@ -57,7 +58,8 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen animate-gradient text-slate-900 dark:text-white transition-colors duration-500">
+    <div className="min-h-screen animate-gradient text-slate-900 dark:text-white transition-colors duration-500 relative">
+      <MouseBackground />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-slate-300 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md transition-colors duration-500">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -89,76 +91,92 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-24 pt-20">
+      <section className="max-w-6xl mx-auto px-4 py-16 md:py-24 pt-24 md:pt-32 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div className="flex-shrink-0 w-[400px] flex justify-center">
-            <div className="w-70 h-70 md:w-70 md:h-70 rounded-full border-4 border-cyan-400 overflow-hidden">
+          <div className="flex-shrink-0 w-full max-w-[300px] md:max-w-[400px] flex justify-center">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-cyan-400 overflow-hidden shadow-lg shadow-cyan-500/20">
               <Image
-                src="logo.jpg"
+                src="/logo.jpg"
                 alt="Yousef Alboshra"
-                width={260}
-                height={260}
+                width={320}
+                height={320}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2 text-slate-900 dark:text-white">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white leading-tight">
               Hey, I'm Yousef.{" "}
-              <span className="text-cyan-500 dark:text-cyan-400">I'm a Frontend Software Developer</span>
+              <span className="text-cyan-500 dark:text-cyan-400 block mt-2">I'm a Frontend Software Developer</span>
             </h1>
-            <p className="text-slate-600 dark:text-slate-400 mb-6">
+            <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg max-w-2xl mx-auto md:mx-0">
               With 2+ years of experience building web applications and delivering seamless user experiences.
             </p>
-            <div className="flex gap-4">
-              <button className="px-4 py-2 rounded border border-slate-400 dark:border-slate-600 hover:border-cyan-400 hover:text-cyan-400 transition text-sm text-slate-700 dark:text-slate-300">
-                📍 Sudan, Sennar
-              </button>
-              <button className="px-4 flex gap-1 py-2 rounded border border-slate-400 dark:border-slate-600 hover:border-cyan-400 hover:text-cyan-400 transition text-sm text-slate-700 dark:text-slate-300">
-                <a href="https://www.linkedin.com/in/yousef-alboshra-79509b235" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/onemarc/tech-icons/292cfceecce6a863e9a10216c1c730d3a1a02ff5/icons/linkedin.svg" width="20" height="20" /></a> LinkedIn
-              </button>
-              <button className="px-4 flex gap-1 py-2 rounded border border-slate-400 dark:border-slate-600 hover:border-cyan-400 hover:text-cyan-400 transition text-sm text-slate-700 dark:text-slate-300">
-                <a href="https://github.com/JoeMicro240528" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/onemarc/tech-icons/292cfceecce6a863e9a10216c1c730d3a1a02ff5/icons/github-dark.svg" width="20" height="20" /></a> GitHub
-              </button>
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+              <div className="px-4 py-2 rounded border border-slate-400 dark:border-slate-600 text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                <span>📍</span> Sudan, Sennar
+              </div>
+              <a
+                href="https://www.linkedin.com/in/yousef-alboshra-79509b235"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded border border-slate-400 dark:border-slate-600 hover:border-cyan-400 hover:text-cyan-400 transition text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2"
+              >
+                <Image src="/icons/linkedin.svg" alt="LinkedIn" width={20} height={20} className="dark:invert" /> LinkedIn
+              </a>
+              <a
+                href="https://github.com/JoeMicro240528"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded border border-slate-400 dark:border-slate-600 hover:border-cyan-400 hover:text-cyan-400 transition text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2"
+              >
+                <Image src="/icons/github-dark.svg" alt="GitHub" width={20} height={20} className="dark:invert" /> GitHub
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Tech Stack Section  */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
+      <section className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <h2 className="text-center text-xl font-bold tracking-widest text-slate-700 dark:text-slate-300 mb-12">
           TECH STACK
         </h2>
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-4 mb-4">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6 mb-4">
           {TechStack.map((tech) => (
             <div
               key={tech.name}
-              className="aspect-square   rounded border border-slate-300 dark:border-slate-700 hover:border-cyan-400 flex flex-col gap-2 items-center justify-center text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-900 transition cursor-pointer text-slate-900 dark:text-slate-300"
+              className="aspect-square rounded-xl border border-slate-300 dark:border-slate-700 hover:border-cyan-400 flex flex-col gap-3 items-center justify-center text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-900 transition cursor-pointer text-slate-900 dark:text-slate-300 group"
             >
-              <a href="#"><img src={`https://raw.githubusercontent.com/onemarc/tech-icons/292cfceecce6a863e9a10216c1c730d3a1a02ff5/icons/${tech.icon}.svg`} width="100" height="50" /></a>
+              <div className="relative w-12 h-12 md:w-16 md:h-16 transition-transform group-hover:scale-110 duration-300">
+                <Image
+                  src={`/icons/${tech.icon}.svg`}
+                  alt={tech.name}
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <span className="text-center px-2">{tech.name}</span>
-
             </div>
           ))}
         </div>
-
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="max-w-6xl mx-auto px-4 py-16">
+      <section id="projects" className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <h2 className="text-xl font-bold tracking-widest text-slate-700 dark:text-slate-300 mb-12">PROJECTS</h2>
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* TRIBE Project */}
-          <div className="border border-slate-300 dark:border-slate-700 rounded-lg p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50">
+          <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">MoviesDB</h3>
               <span className="text-2xl">🎬</span>
             </div>
-            <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+            <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
               A movie database application that allows users to browse, search, and discover movies with detailed information and user reviews.
             </p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-6">
               {["Reactjs ", "Typescript", "ReduxToolKit", "Tailwind CSS"].map((badge) => (
                 <span
                   key={badge}
@@ -168,14 +186,23 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="flex gap-3">
-              <button className="px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300">
-                <a href="https://movies-db-b5co.vercel.app/" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
-              </button>
-              <button className="px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300">
-                <a href="https://github.com/JoeMicro240528/Movies_DB" target="_blank" rel="noopener noreferrer">💾 Source Code</a>
-              </button>
-
+            <div className="flex gap-3 mt-auto">
+              <a
+                href="https://movies-db-b5co.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+              >
+                🔗 Live Demo
+              </a>
+              <a
+                href="https://github.com/JoeMicro240528/Movies_DB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+              >
+                💾 Source
+              </a>
             </div>
           </div>
 
@@ -186,16 +213,16 @@ export default function Home() {
           ].map((project) => (
             <div
               key={project.name}
-              className="border border-slate-300 dark:border-slate-700 rounded-lg p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50"
+              className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">{project.name}</h3>
                 <span className="text-2xl">{project.emoji}</span>
               </div>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
@@ -205,14 +232,23 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-3">
-                <button className="px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300">
-                  <a href={project.livedemo} target="_blank" rel="noopener noreferrer">🔗 Live Demo</a>
-                </button>
-                <button className="px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300">
-                  <a href={project.sourcecode} target="_blank" rel="noopener noreferrer">💾 Source Code</a>
-                </button>
-
+              <div className="flex gap-3 mt-auto">
+                <a
+                  href={project.livedemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+                >
+                  🔗 Live Demo
+                </a>
+                <a
+                  href={project.sourcecode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+                >
+                  💾 Source
+                </a>
               </div>
             </div>
           ))}
@@ -220,55 +256,58 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="max-w-6xl mx-auto px-4 py-16">
+      <section id="contact" className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <h2 className="text-xl font-bold tracking-widest text-slate-700 dark:text-slate-300 mb-12">CONTACT</h2>
-        <div className="border border-slate-300 dark:border-slate-700 rounded-lg p-8 max-w-2xl bg-slate-50 dark:bg-slate-900/50">
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
+        <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-8 max-w-2xl bg-slate-50 dark:bg-slate-900/50 hover:border-cyan-400 transition">
+          <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
             Have a project in mind or just want to chat? Feel free to reach out to me through any of these channels.
           </p>
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <span className="text-cyan-500 dark:text-cyan-400 font-bold">Email:</span>
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 group">
+              <span className="text-cyan-500 dark:text-cyan-400 font-bold w-20">Email:</span>
               <a
                 href="mailto:yousefalboshra@gmail.com"
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition"
+                className="text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition group-hover:translate-x-1 duration-300"
               >
                 yousefalboshra@gmail.com
               </a>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-cyan-500 dark:text-cyan-400 font-bold">LinkedIn:</span>
+            <div className="flex items-center gap-4 group">
+              <span className="text-cyan-500 dark:text-cyan-400 font-bold w-20">LinkedIn:</span>
               <a
                 href="https://www.linkedin.com/in/yousef-alboshra-79509b235"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition"
+                className="text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition group-hover:translate-x-1 duration-300"
               >
                 linkedin.com/yousef-alboshra
               </a>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-cyan-500 dark:text-cyan-400 font-bold">GitHub:</span>
+            <div className="flex items-center gap-4 group">
+              <span className="text-cyan-500 dark:text-cyan-400 font-bold w-20">GitHub:</span>
               <a
                 href="https://github.com/JoeMicro240528"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition"
+                className="text-slate-700 dark:text-slate-300 hover:text-cyan-400 transition group-hover:translate-x-1 duration-300"
               >
                 github.com/JoeMicro
               </a>
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-slate-300 dark:border-slate-700">
-            <button className="px-6 py-3 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold rounded transition">
+            <a
+              href="mailto:yousefalboshra@gmail.com"
+              className="inline-block px-8 py-3 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold rounded-lg transition shadow-lg shadow-cyan-400/20 hover:shadow-cyan-400/40"
+            >
               Send Me an Email
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-300 dark:border-slate-800 mt-20 bg-white dark:bg-slate-950 transition-colors duration-500">
+      <footer className="border-t border-slate-300 dark:border-slate-800 mt-20 bg-white dark:bg-slate-950 transition-colors duration-500 relative z-10">
         <div className="max-w-6xl mx-auto px-4 py-12 text-center text-slate-600 dark:text-slate-400 text-sm">
           <p>© 2025 Yousef Albushra. All rights reserved.</p>
         </div>
