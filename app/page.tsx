@@ -171,8 +171,7 @@ export default function Home() {
           <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">Shopify Store</h3>
-              {/* //icon ecommers */}
-              <span className="text-2xl"></span>
+              <span className="text-2xl">🛒</span>
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
               E commers website show the products and categories and show single product  and allow the user to buy them and add it to the cart and wishlist
