@@ -172,7 +172,7 @@ export default function Home() {
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">Shopify Store</h3>
               {/* //icon ecommers */}
-              <span className="text-2xl"><Image src="/icons/ecommerce.svg" alt="Ecommerce" width={20} height={20} className="dark:invert" /></span>
+              <span className="text-2xl"></span>
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
               E commers website show the products and categories and show single product  and allow the user to buy them and add it to the cart and wishlist
