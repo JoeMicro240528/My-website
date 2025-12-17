@@ -167,17 +167,17 @@ export default function Home() {
       <section id="projects" className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <h2 className="text-xl font-bold tracking-widest text-slate-700 dark:text-slate-300 mb-12">PROJECTS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* TRIBE Project */}
+          {/* Shopify Store Project */}
           <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">MoviesDB</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Shopify Store</h3>
               <span className="text-2xl">🎬</span>
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
-              A movie database application that allows users to browse, search, and discover movies with detailed information and user reviews.
+              E commers website show the products and categories and show single product  and allow the user to buy them and add it to the cart and wishlist
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
-              {["Reactjs ", "Typescript", "ReduxToolKit", "Tailwind CSS"].map((badge) => (
+              {["Reactjs ", "Typescript", "ReduxToolKit", "MUI", "RestAPI", 'axios', 'react-router',].map((badge) => (
                 <span
                   key={badge}
                   className="px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300"
@@ -188,7 +188,7 @@ export default function Home() {
             </div>
             <div className="flex gap-3 mt-auto">
               <a
-                href="https://movies-db-b5co.vercel.app/"
+                href="https://shopify-store-tau.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
@@ -196,7 +196,7 @@ export default function Home() {
                 🔗 Live Demo
               </a>
               <a
-                href="https://github.com/JoeMicro240528/Movies_DB"
+                href="https://github.com/JoeMicro240528/Shopify_Store"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
@@ -208,8 +208,10 @@ export default function Home() {
 
           {/* Additional Projects */}
           {[
+            { name: "MoviesDB", emoji: "🎬", tech: ["Reactjs ", "Typescript", "ReduxToolKit", "Tailwind CSS"], description: " A movie database application that allows users to browse, search, and discover movies with detailed information and user reviews.", sourcecode: 'https://github.com/JoeMicro240528/Movies_DB.git', livedemo: 'https://movies-db-b5co.vercel.app/' },
             { name: " Real Estate", emoji: " 🏠", tech: ["React", "aos animation", "Tailwind CSS"], description: "A real estate listing platform with interactive maps and property details.", sourcecode: 'https://github.com/JoeMicro240528/Real_Estate.git', livedemo: 'https://real-estate-lyart-one-31.vercel.app/' },
             { name: "landing page", emoji: "🌐", tech: ["React", "React-typed", "Tailwind CSS"], description: "A landing page with interactive typing animation and responsive design.", sourcecode: 'https://github.com/JoeMicro240528/tailwindcss-app.git', livedemo: 'https://tailwindcss-app-sepia.vercel.app/' },
+
           ].map((project) => (
             <div
               key={project.name}
