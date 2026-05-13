@@ -167,8 +167,91 @@ export default function Home() {
       <section id="projects" className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <h2 className="text-xl font-bold tracking-widest text-slate-700 dark:text-slate-300 mb-12">PROJECTS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Shopify Store Project */}
+          {/* Logistic Al-Afdal Customs Services  */}
           <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Logistic  dashboard system</h3>
+              <span className="text-2xl"></span>
+            </div>
+            <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
+              dashboard system for a logistics company that provides customs services, allowing them to manage their operations efficiently and effectively.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {["Next js ", "Typescript", "ReduxToolKit", "Tailwind CSS", "Backend API", 'axios',].map((badge) => (
+                <span
+                  key={badge}
+                  className="px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+            {/* try project email and password : */}
+            <p className="text-slate-600 dark:text-slate-400 text-xs mb-4">
+              Try the project with email: <span className="font-mono bg-slate-200 dark:bg-slate-800 px-1 rounded">yousefalboshra@gmail.com</span>
+              <br />
+              Password: <span className="font-mono bg-slate-200 dark:bg-slate-800 px-1 rounded">123456</span>
+            </p>
+            <div className="flex gap-3 mt-auto">
+              <a
+                href="https://admin-dashboard-frontend-one-delta.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+              >
+                🔗 Live Demo
+              </a>
+              <a
+                href="https://github.com/JoeMicro240528/admin-dashboard-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+              >
+                💾 Source
+              </a>
+            </div>
+          </div>
+            {/* Yalla Store Project */}
+          <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Yalla Store</h3>
+              <span className="text-2xl">🛒</span>
+            </div>
+            <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
+               نظام انتظار العملاء
+كيوسيرف QSERVE
+حلول تقنية متطورة لإدارة انتظار العملاء وتحسين تجربة الخدمة في المستشفيات والبنوك والمؤسسات الحكومية والخاصة
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {["Next js ", "Typescript", "Tailwind CSS","shadcn/ui"].map((badge) => (
+                <span
+                  key={badge}
+                  className="px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-3 mt-auto">
+              <a
+                href="https://yalla-store-nine.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+              >
+                🔗 Live Demo
+              </a>
+              <a
+                href="https://github.com/JoeMicro240528/Yalla-Store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-4 py-2 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition text-sm border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-300 text-center"
+              >
+                💾 Source
+              </a>
+            </div>
+          </div>
+           <div className="border border-slate-300 dark:border-slate-700 rounded-xl p-6 hover:border-cyan-400 transition bg-slate-50 dark:bg-slate-900/50 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col h-full">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">Shopify Store</h3>
               <span className="text-2xl">🛒</span>
@@ -210,8 +293,6 @@ export default function Home() {
           {[
             { name: "MoviesDB", emoji: "🎬", tech: ["Reactjs ", "Typescript", "ReduxToolKit", "Tailwind CSS"], description: " A movie database application that allows users to browse, search, and discover movies with detailed information and user reviews.", sourcecode: 'https://github.com/JoeMicro240528/Movies_DB.git', livedemo: 'https://movies-db-b5co.vercel.app/' },
             { name: " Real Estate", emoji: " 🏠", tech: ["React", "aos animation", "Tailwind CSS"], description: "A real estate listing platform with interactive maps and property details.", sourcecode: 'https://github.com/JoeMicro240528/Real_Estate.git', livedemo: 'https://real-estate-lyart-one-31.vercel.app/' },
-            { name: "landing page", emoji: "🌐", tech: ["React", "React-typed", "Tailwind CSS"], description: "A landing page with interactive typing animation and responsive design.", sourcecode: 'https://github.com/JoeMicro240528/tailwindcss-app.git', livedemo: 'https://tailwindcss-app-sepia.vercel.app/' },
-
           ].map((project) => (
             <div
               key={project.name}
